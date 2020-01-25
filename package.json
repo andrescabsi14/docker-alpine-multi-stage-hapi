@@ -1,0 +1,21 @@
+{
+  "name": "intro-to-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docker:build": "docker build -t alpine-multi-stage:1 .",
+    "docker:builddev": "docker build -t alpine-multi-stage:1 -f dev.Dockerfile .",
+    "docker:run": "docker run --init --rm -p 3000:3000 -it alpine-multi-stage:1",
+    "docker:ash": "docker run --init --rm -p 3000:3000 -it alpine-multi-stage:1 sh",
+    "docker:inspect": "docker inspect alpine-multi-stage:1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^18.4.0",
+    "hapi-pino": "^6.3.0"
+  }
+}
